@@ -1,0 +1,13 @@
+# generated render output
+examples/out/
+out/
+*.report.json
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

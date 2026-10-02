@@ -1,0 +1,203 @@
+{
+  "meta": {
+    "id": "image-to-video__green-screen-micro-animation",
+    "task": "image_to_video",
+    "version": "1.1.0",
+    "summary": "Photoreal micro-animation of a still photograph shot on a chroma-green screen. Identity, composition, pose, wardrobe and background are locked; only naturally movable elements (hair, jewellery, fabric, breathing, skin highlights) are animated. Camera fully locked.",
+    "reference_image": "USE_THE_PROVIDED_IMAGE_AS_THE_ONLY_SOURCE. The output frame 0 must be visually indistinguishable from the source image.",
+    "how_to_use": [
+      "Pass the source still as the image / first-frame / image-reference input of the video model.",
+      "Set motion strength to its LOWEST available value (low / subtle / 1-3 out of 10).",
+      "Set camera-motion controls to NONE (no zoom, no pan, no orbit, no shake, no dolly).",
+      "Use a fixed seed and re-roll the seed rather than raising motion strength.",
+      "Prefer 4-6 s durations; longer clips drift more."
+    ]
+  },
+
+  "core_instruction": {
+    "goal": "Animate the entire existing image while preserving the exact original image, subject, composition, proportions, colors, clothing, accessories, lighting, and green-screen background.",
+    "identity_lock": true,
+    "composition_lock": true,
+    "position_lock": true,
+    "style_lock": true,
+    "no_redesign": true,
+    "no_recreation": true,
+    "no_added_elements": true,
+    "no_removed_elements": true,
+    "output_must_read_as": "the original photograph coming alive, not a regenerated or reconstructed image"
+  },
+
+  "camera": {
+    "camera_locked": true,
+    "static_camera": true,
+    "no_zoom": true,
+    "no_zoom_in": true,
+    "no_zoom_out": true,
+    "no_pan": true,
+    "no_tilt": true,
+    "no_roll": true,
+    "no_dolly": true,
+    "no_tracking": true,
+    "no_camera_shake": true,
+    "no_reframing": true,
+    "no_crop_change": true,
+    "no_perspective_change": true
+  },
+
+  "subject_animation": {
+    "overall": "Create subtle, realistic, continuous micro-movements across the entire visible subject without changing her original pose or position.",
+    "face": {
+      "eyes": {
+        "animation": "Very subtle natural blinking at realistic intervals.",
+        "movement": "Tiny natural eye movement behind the sunglasses, extremely subtle.",
+        "preserve": "Keep sunglasses completely unchanged in shape, position, size and design."
+      },
+      "lips": {
+        "animation": "Very subtle natural lip and mouth micro-movement, almost imperceptible.",
+        "preserve": "Do not change lip shape, volume, color, expression or facial structure."
+      },
+      "head": {
+        "animation": "Extremely subtle natural head micro-movement, as if breathing and maintaining a relaxed pose.",
+        "restriction": "Do not rotate, reposition or redesign the head."
+      },
+      "skin": {
+        "animation": "Subtle realistic skin highlight movement caused by natural breathing and tiny body motion.",
+        "preserve": "Keep exact skin tone, texture, highlights and shadows."
+      }
+    },
+    "hair": {
+      "animation": "Animate all visible curly hair strands individually and naturally.",
+      "motion": [
+        "Very subtle curl movement",
+        "Tiny strand separation and settling",
+        "Gentle natural bounce",
+        "Small secondary motion between individual curls",
+        "Occasional tiny movement at loose hair edges"
+      ],
+      "physics": "Soft realistic hair physics.",
+      "restriction": "Hair must remain attached to the original head and preserve the exact hairstyle, volume, length, color and silhouette."
+    },
+    "sunglasses": {
+      "animation": "Extremely subtle natural movement synchronized with tiny head motion.",
+      "effects": "Add a very subtle moving light reflection across the existing lenses.",
+      "restriction": "Do not change frame shape, lens color, position, size or design."
+    },
+    "earrings": {
+      "animation": "Both visible hoop earrings gently swing with tiny secondary motion.",
+      "physics": "Realistic lightweight jewelry physics.",
+      "restriction": "Do not change size, color, shape or position or attachment points."
+    },
+    "bracelets": {
+      "animation": "All visible bracelets move subtly with the natural movement of the raised arm.",
+      "effects": "Very small metallic light glints may travel across the existing bracelet surfaces.",
+      "restriction": "Do not add jewelry or change existing jewelry."
+    },
+    "arms": {
+      "raised_arm": {
+        "animation": "Very subtle natural muscle and skin movement while maintaining the exact original raised-arm pose.",
+        "restriction": "No major arm movement, no pose change, no stretching, no deformation."
+      },
+      "front_arm": {
+        "animation": "Subtle breathing-related micro-movement and realistic skin/muscle motion.",
+        "restriction": "Keep the original position and silhouette."
+      }
+    },
+    "shoulders": {
+      "animation": "Very subtle shoulder movement synchronized with slow natural breathing.",
+      "restriction": "Preserve exact shoulder shape and pose."
+    },
+    "torso_and_body": {
+      "animation": "Slow, subtle natural breathing motion.",
+      "movement": "Very small rise-and-fall movement through the chest, shoulders and torso.",
+      "restriction": "Do not change body proportions, body shape, pose, or silhouette."
+    },
+    "clothing": {
+      "swimwear": {
+        "animation": "Subtle realistic fabric movement caused by breathing and tiny body motion.",
+        "strings": "The visible strings and knots should have tiny natural secondary movement.",
+        "restriction": "Do not change color, design, coverage, shape, knot placement or fabric texture."
+      }
+    },
+    "skin_highlights": {
+      "animation": "Maintain the original warm lighting while allowing extremely subtle realistic highlight changes across the skin as the subject moves.",
+      "restriction": "No lighting redesign, no color grading change, no artificial glow."
+    }
+  },
+
+  "micro_motion": {
+    "breathing": "Slow and natural, roughly one complete breath across the clip.",
+    "secondary_motion": "Hair, earrings, bracelets and swimwear strings respond naturally to the tiny body movement.",
+    "motion_strength": "Subtle to moderate but always realistic.",
+    "avoid_rigid_animation": true,
+    "avoid_static_freeze": true,
+    "avoid_exaggerated_motion": true
+  },
+
+  "background": {
+    "green_screen": {
+      "animation": "Completely static.",
+      "color": "Preserve the exact original bright green chroma color.",
+      "no_gradient": true,
+      "no_texture": true,
+      "no_light_change": true,
+      "no_shadow_change": true,
+      "no_background_motion": true,
+      "no_extra_shadows": true,
+      "no_keying_artifacts": true
+    }
+  },
+
+  "image_integrity": {
+    "preserve_original_resolution": true,
+    "preserve_original_aspect_ratio": true,
+    "preserve_exact_composition": true,
+    "preserve_exact_subject_position": true,
+    "preserve_exact_edges": true,
+    "preserve_exact_colors": true,
+    "preserve_exact_lighting": true,
+    "preserve_exact_textures": true,
+    "preserve_existing_background": true
+  },
+
+  "negative_prompt": [
+    "identity change", "different person", "face morphing", "changing facial features",
+    "body shape change", "weight change", "proportion distortion",
+    "pose change", "repositioning the subject", "walking", "turning around",
+    "hairstyle change", "hair length change", "hair loss", "flying hair",
+    "sunglasses morphing", "earring morphing", "bracelet morphing",
+    "wardrobe change", "color shift", "color grading change", "hue change",
+    "skin tone change", "beauty filter", "airbrushing", "plastic skin",
+    "lighting change", "relighting", "adding glow", "hdr look",
+    "adding objects", "removing objects", "extra fingers", "extra limbs",
+    "deformed hands", "warped body", "silhouette change",
+    "green screen change", "background gradient", "background texture",
+    "moving background", "background shadows", "chroma key artifacts", "green spill",
+    "zoom", "zoom in", "zoom out", "pan", "tilt", "camera shake", "handheld camera",
+    "dolly", "tracking shot", "orbit", "cinematic camera move", "crop", "reframe",
+    "text overlay", "watermark", "logo", "subtitles",
+    "flicker", "frame jitter", "temporal warping", "morphing artifacts",
+    "ghosting", "strobing", "duplicated limbs", "melting",
+    "cartoon", "anime", "3d render", "cgi look", "oil painting", "illustration"
+  ],
+
+  "motion_quality": {
+    "style": "Photorealistic natural micro-animation",
+    "physics": "Realistic human and fabric physics",
+    "temporal_consistency": "Very high",
+    "edge_consistency": "Very high",
+    "identity_consistency": "Maximum",
+    "deformation": "None",
+    "flickering": "None",
+    "warping": "None",
+    "frame_jitter": "None"
+  },
+
+  "loop": {
+    "seamless_loop": true,
+    "start_and_end_match": true,
+    "no_sudden_motion": true,
+    "no_jump_cuts": true
+  },
+
+  "final_instruction": "Animate EVERYTHING that is naturally capable of moving in the existing image: hair strands, curls, blinks, lip micro-movement, sunglasses reflections, earrings, bracelets, raised arm micro-motion, shoulders, torso, breathing, skin highlights, swimwear fabric and strings. Keep every element exactly where it is. The animation must look like the original photograph has naturally come alive, not like the image has been regenerated. Camera must remain completely locked with absolutely NO zoom and NO pan."
+}

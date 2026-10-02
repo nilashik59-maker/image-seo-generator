@@ -1,0 +1,42 @@
+{
+  "_comment": [
+    "Zones for examples/fixture_green_screen.png (1024x1536). Pixels, or fractions",
+    "of the image when every number in a rect is <= 1. rotate_top pivots around the",
+    "TOP edge of the rect, so put the top edge at the point where the earring hangs",
+    "from the ear. Keep amplitude at 1.0 unless you want a bigger swing."
+  ],
+  "zones": [
+    {
+      "name": "hoop_left",
+      "mode": "rotate_top",
+      "rect": [392, 355, 62, 70],
+      "amplitude": 1.0,
+      "cycles": 2,
+      "phase": 0.0
+    },
+    {
+      "name": "hoop_right",
+      "mode": "rotate_top",
+      "rect": [566, 350, 62, 70],
+      "amplitude": 1.0,
+      "cycles": 2,
+      "phase": 0.9
+    },
+    {
+      "name": "bracelets",
+      "mode": "sway",
+      "rect": [580, 80, 110, 120],
+      "amplitude": 0.9,
+      "cycles": 1,
+      "phase": 1.6
+    },
+    {
+      "name": "lens_glint",
+      "mode": "glint",
+      "rect": [0.30, 0.115, 0.28, 0.05],
+      "amplitude": 0.85,
+      "cycles": 1,
+      "phase": 0.4
+    }
+  ]
+}

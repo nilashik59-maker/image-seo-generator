@@ -1,0 +1,47 @@
+{
+  "_comment": [
+    "Optional hand-placed motion zones. Values are pixels, or fractions of the",
+    "image if every number in a rect is <= 1. Modes:",
+    "  rotate_top - swings a rigid body around the TOP edge of its rect (hoop earrings,",
+    "               dangling charms). Use the earring's attachment point as the top edge.",
+    "  sway       - soft horizontal drift + slight vertical bob (bracelets, pendants,",
+    "               loose fabric).",
+    "  glint      - the only non-warp effect: a faint moving highlight swept across the",
+    "               rect (sunglass lenses, metal). Keep amplitude <= 0.04 to stay subtle.",
+    "amplitude: 1.0 = the calibrated default; cycles = full oscillations per loop (integer)."
+  ],
+  "zones": [
+    {
+      "name": "earring_left",
+      "mode": "rotate_top",
+      "rect": [118, 402, 46, 62],
+      "amplitude": 1.0,
+      "cycles": 2,
+      "phase": 0.0
+    },
+    {
+      "name": "earring_right",
+      "mode": "rotate_top",
+      "rect": [512, 398, 44, 60],
+      "amplitude": 1.0,
+      "cycles": 2,
+      "phase": 0.35
+    },
+    {
+      "name": "bracelets_raised_arm",
+      "mode": "sway",
+      "rect": [286, 168, 132, 58],
+      "amplitude": 0.8,
+      "cycles": 1,
+      "phase": 1.2
+    },
+    {
+      "name": "lens_glint",
+      "mode": "glint",
+      "rect": [0.24, 0.11, 0.34, 0.06],
+      "amplitude": 0.03,
+      "cycles": 1,
+      "phase": 0.0
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+numpy>=1.24
+pillow>=10.0
+# only needed when the `ffmpeg` binary is not already on PATH:
+imageio-ffmpeg>=0.4.9
