@@ -14,7 +14,7 @@ python -m pip install -r renderer/requirements.txt
 ./renderer/demo.sh                       # or PYTHON=/path/to/venv/bin/python ./renderer/demo.sh
 ```
 
-It writes `examples/out/fixture_loop.mp4` (4 s, 120 frames, 30 fps, seamless), a 720 px animated
+It writes `examples/renders/fixture_loop.mp4` (4 s, 120 frames, 30 fps, seamless), a 720 px animated
 WebP preview, and a report whose checks all pass.
 
 ## Use your own photograph

@@ -1,6 +1,5 @@
-# generated render output
-examples/out/
-out/
+# generated render output (kept in the workspace, not in git)
+examples/renders/
 *.report.json
 
 # python

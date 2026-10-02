@@ -16,7 +16,7 @@ PYTHON="${PYTHON:-python3}"
 
 "$PYTHON" renderer/micro_anim.py \
   --input examples/fixture_green_screen.jpg \
-  --out examples/out/fixture_loop \
+  --out examples/renders/fixture_loop \
   --zones examples/fixture_zones.json \
   --frames 120 --fps 30 \
-  --debug-dir examples/out/debug --debug-frames 0,15,30,45,60,75,90,105
+  --debug-dir examples/renders/debug --debug-frames 0,15,30,45,60,75,90,105
